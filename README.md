@@ -36,6 +36,7 @@ file_io.read_input(19, inputs)
 
 There are 4 folders and one main lua script:
 
+```
 .
 └───femm_lib
     ├───connection
@@ -43,6 +44,7 @@ There are 4 folders and one main lua script:
     ├───out
     ├───sim
     └───main.lua
+```
 
 Each folder has a different task.
 
