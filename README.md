@@ -1,6 +1,6 @@
 ## About
 
-A Lua 4.0 library for the Finite Element simulation software [FEMMM](https://www.femm.info/wiki/HomePage),
+A Lua 4.0 library for the Finite Element simulation software [FEMM](https://www.femm.info/wiki/HomePage),
 specifically tailored to the needs of TU Dresden students taking the module
 [Finite Elemente Methode](https://www.ifte.de/lehre/fem/index.html) in
 the course [Simulation in der Gerätetechnik](<https://www.ifte.de/lehre/ET-12_05_07_(Lienig).pdf>).
