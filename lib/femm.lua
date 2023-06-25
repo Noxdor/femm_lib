@@ -20,6 +20,7 @@ function module.select_problem_domain(domain_name)
     local err_msg = format("'%s' is not a valid domain name.", domain_name)
     Util.message(err_msg)
   end
+  create(domain_id)
 end
 
 return module
