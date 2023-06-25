@@ -22,10 +22,13 @@ function module.read_input(student_id, values)
 
 		closefile(inputFile)
 	else
-		messagebox('Could not open "', inputFileName, '".')
+		local err_msg = format("Could not open input file %s.", inputFileName)
+		Util.message(err_msg)
 	end
 end
 
+-- Writes the generated simulation results into the file `Output_<student_id>.xt`. `Values` must be a numeric index table (array)
+-- that contains key-value tables (objects) with keys `name` (name of the result variable) and `val` (value of the result variable).
 function module.write_output(student_id, values)
 	outputFileName = format("Output_%1$02d.txt", student_id)
 	outputFile = openfile(outputFileName, "w") -- Output-Datei in LUA-Ordner
@@ -36,6 +39,9 @@ function module.write_output(student_id, values)
 			local output_line = format("%s=\n%f\n", value.name, value.val)
 			write(outputFile, output_line) -- Name und Wert auf separate Zeilen
 		end
+	else
+		local err_msg = format("Could not open output file %s", outputFileName)
+		Util.message(err_msg)
 	end
 	closefile(outputFile)
 end

@@ -7,24 +7,23 @@ the course [Simulation in der Gerätetechnik](<https://www.ifte.de/lehre/ET-12_0
 
 ## Usage
 
-The library can be used by copying it into the working directy of the main lua script that is loaded
-into FEMM for simulation. For example in the following project structure, the file `Leiterplatte1_19.lua`
-is the file being loaded into FEMM via its UI. Any library file that is contained in `femm_lib` can then
-be accessed by calling
+This repository can be used as a template for defining and solving a problem in [FEMMM](https://www.femm.info/wiki/HomePage)
+with Lua. It contains a small library that can be used to simplify and clarify some
+of the steps that have to be done in order to generate a solution. The simulation is split into steps. Each step
+has its own file inside the `sim` folder. These files are being imported in the main Lua script in the top level directory. This
+file should not have to be touched, though it can be renamed to fit the problem at hand. Instead, the configurations should be done
+inside the `sim` folder in the corresponding step file.
+
+Library modules can be imported by calling:
 
 ```lua
-dofile("femm_lib/<filename>.lua")
+dofile("lib/<filename>.lua")
 ```
 
-.
-├── femm_lib
-│   └── ...
-└── Leiterplatte1_19.lua
-
-For example, to load the file io utilities, a call like this can be issued:
+For example, to load the **file io** utilities, a call like this can be issued:
 
 ```lua
-local file_io = dofile("femm_lib/file_io.lua")
+local file_io = dofile("lib/file_io.lua")
 ```
 
 After that, the library's functionalities can be used:
