@@ -1,4 +1,4 @@
-Util = dofile("femm_lib/util.lua")
+Util = dofile("lib/util.lua")
 
 -- Select the domain in which the problem exists. This can be either:
 -- "magnetic"

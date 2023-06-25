@@ -1,0 +1,6 @@
+out/*
+connection/Input_*.txt
+connection/Output_*.txt
+!connection/Input_xx.txt
+!connection/Output_xx.txt
+!.gitkeep

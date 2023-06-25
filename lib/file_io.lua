@@ -1,4 +1,4 @@
-Util = dofile("femm_lib/util.lua")
+Util = dofile("lib/util.lua")
 
 local module = {}
 
@@ -9,7 +9,7 @@ local module = {}
 -- be accessed on the same table after this function returned.
 -- This function enables access to optimisation functionality with OptiY.
 function module.read_input(student_id, values)
-	local inputFileName = format("Input_%1$02d.txt", student_id)
+	local inputFileName = format("connection/Input_%1$02d.txt", student_id)
 	local inputFile = openfile(inputFileName, "r")
 
 	-- if file was opened successfully, read in data
@@ -23,6 +23,7 @@ function module.read_input(student_id, values)
 		closefile(inputFile)
 	else
 		local err_msg = format("Could not open input file %s.", inputFileName)
+		print(err_msg)
 		Util.message(err_msg)
 	end
 end
@@ -30,7 +31,7 @@ end
 -- Writes the generated simulation results into the file `Output_<student_id>.xt`. `Values` must be a numeric index table (array)
 -- that contains key-value tables (objects) with keys `name` (name of the result variable) and `val` (value of the result variable).
 function module.write_output(student_id, values)
-	outputFileName = format("Output_%1$02d.txt", student_id)
+	outputFileName = format("connection/Output_%1$02d.txt", student_id)
 	outputFile = openfile(outputFileName, "w") -- Output-Datei in LUA-Ordner
 
 	if outputFile then

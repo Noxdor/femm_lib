@@ -21,7 +21,8 @@ function module.message(msg, type)
 	if type == nil then
 		type = "Error"
 	end
-	messagebox(type, ": ", msg)
+	box_msg = format("%s: %s", type, msg)
+	messagebox(box_msg)
 end
 
 return module
