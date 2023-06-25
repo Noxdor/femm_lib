@@ -1,5 +1,7 @@
 Util = dofile("lib/util.lua")
 
+local module = {}
+
 -- Select the domain in which the problem exists. This can be either:
 -- "magnetic"
 -- "electrostatic"
@@ -19,3 +21,5 @@ function module.select_problem_domain(domain_name)
     Util.message(err_msg)
   end
 end
+
+return module
